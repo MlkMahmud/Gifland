@@ -16,12 +16,12 @@ const request        = require('request'),
       app            = express();
 
 //Mongoose Setup
-let db = process.env.DATABASE;
+const db = process.env.DATABASE;
 mongoose.connect(db, {useNewUrlParser: true});
 
 //EXPRESS SETUP
 
-let arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
