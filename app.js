@@ -12,6 +12,7 @@ const request        = require('request'),
       session        = require('express-session'),
       apiRoutes      = require('./routes/api'),
       gifRoutes      = require('./routes/gif'),
+      port           = process.env.PORT,
       indexRoutes    = require('./routes/index'),
       app            = express();
 
@@ -20,7 +21,6 @@ const db = process.env.DATABASE;
 mongoose.connect(db, {useNewUrlParser: true});
 
 //EXPRESS SETUP
-
 const arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}))
@@ -56,6 +56,6 @@ app.use(apiRoutes);
 
 
 
-app.listen(process.env.PORT, function(){
+app.listen(port, function(){
     console.log('I Got You!!')
 })
