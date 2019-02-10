@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+<h1 class="path"><%=res%></h1>
+<div class="grid">
+    <% for(let gif of gifs){%>
+        <% if(gif.author.username == currentUser.username){%>
+         <div class="img-container">
+             <img class="img" src="<%=gif.image%>">
+             <div class="del">
+                 <form action="/favorites/<%=gif._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="X">
+                </form>
+             </div>
+         </div>
+        <%}%>
+    <%}%>
+</div>
+
+
+<% include ./partials/footer %>
+

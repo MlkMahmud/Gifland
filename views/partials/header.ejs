@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GifLand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/body.css" /> 
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="/" id="logo" class="">GIFLAND</a>
+            <nav>
+                <a href="/reactions" class="nav">Reactions</a>
+                <a href="/entertainment" class="nav">Entertainment</a>
+                <a href="/sports" class="nav">Sports</a>
+                <a href="/stickers" class="nav">Stickers</a>
+                <a href="/artists" class="nav">Artists</a>
+                <a href="/upload" class="nav">Upload</a>
+                <% if(!currentUser){ %>
+                    <a href="/login"  class="nav">Login</a>
+                    <a href="/register"  class="nav">Register</a>
+                <%}else{%>
+                    <a class="nav">Signed in as <%=currentUser.username%></a>
+                    <a href="/logout" class="nav">Logout</a>
+                <% } %>
+                <div id="menu">
+                    <div class="bar"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+            </nav>
+        </header>
+        <% if(error && error.length > 0){ %>
+            <div class="container">
+              <div class="alert error">
+                <p><%=error%></p>
+              </div>
+          <%}%>
+          <% if(success && success.length > 0){ %>
+            <div class="container">
+              <div class="alert success">
+                <p><%=success %>.</p>
+              </div>
+            </div>
+            <%}%>
+        <div id="dropdown">
+            <a href="/reactions" class="drop">Reactions</a>
+            <a href="/entertainment" class="drop ">Entertainment</a>
+            <a href="/sports" class="drop ">Sports</a>
+            <a href="/stickers" class="drop ">Stickers</a>
+            <a href="/artists" class="drop ">Artists</a>
+            <a href="/upload" class="drop ">Upload</a>
+            <% if(currentUser){ %>
+                <a href="/logout" class="drop ">Logout</a>
+            <%}else{%>
+                <a href="/login"  class="drop ">Login</a>
+                <a href="/register"  class="drop ">Register</a>
+            <%}%>
+           
+            
+        </div>
+      
+      
+   
+       
+    
