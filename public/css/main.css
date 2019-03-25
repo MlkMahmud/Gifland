@@ -5,10 +5,8 @@
     box-sizing: border-box;
 }
 body{
-    background: black;
-    padding: 10px;
-    width: 100%;
-    overflow-y: scroll;
+  background: black;
+  padding: 0 10px;
 }
 
 
