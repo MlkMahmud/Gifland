@@ -1,14 +1,14 @@
 <% include ./partials/header %>
 <form action="/search" id="search" method="GET">
-    <input class="input" type="text" placeholder="Search Gifs..." name="name">
-    <button type="submit">&#128270;</button>
+    <input id="searchBarInput" type="text" placeholder="Search Gifs..." name="name">
+    <button id="searchBarButton" type="submit">&#128270;</button>
     </form>
 <h3 class="date plus"><%=`Today ${arr[ new Date().getMonth()]} ${new Date().getDate()}`%></h3>
-<h4 class="date y">Latest Stories</h4>
+<h4 class="date">Latest Stories</h4>
 <div class="main">
     <div class="i one"><h3><a href="/today">Today's Gifs</a></h3></div>
     <div class="i two"><h3><a href="/trending">Trending</a></div>
-    <div class="i three"><h3><a href="/favorites">Favorites<br>&#x2605;</a></div>
+    <div class="i three"><h3><a href="/favorites">Favorites</a></div>
 </div>
 
 

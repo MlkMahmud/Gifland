@@ -6,15 +6,11 @@
 }
 body{
     background: black;
-    margin: 0;
-    padding: 0;
+    padding: 10px;
+    width: 100%;
+    overflow-y: scroll;
 }
 
-#container{
-    width: 95%;
-    margin: 0 auto;
-    overflow: hidden;
-}
 
 header{
     width: 100%;
@@ -24,6 +20,7 @@ header{
     margin-bottom: 10px;
     
 }
+
 #logo{
     font-family: "Roboto Slab", serif;
     font-weight: bolder;
@@ -37,12 +34,6 @@ header{
 
 }
 
-nav{
-    margin-left: 1.66%;
-    text-align: center;
-}
-
-
 .nav{
     margin: 0 0.3%;
     font-family: "Roboto Slab", serif;
@@ -55,37 +46,37 @@ nav{
     text-shadow: 3px 3px #4B0082;
 }
 
+nav {
+  text-align: center;
+}
+
 
 #search{
     width: 100%;
     height: 50px;
     display: flex;
+    justify-content: space-between;
     overflow: hidden;
-    margin-left: 1.66%;
-}
-form, .input, button{
-    margin: 0;
-    padding: 0;
 }
 
-button{
+#searchBarButton {
     background:#4B0082;
     border: none;
-    display: block;
-    float: left;    
     height: 100%;
-    width:10%;
+    width: 20%;
+    max-width: 100px;
     cursor: pointer;
     font-size: 24px;
 }
 
-.input{
+#searchBarInput {
     border: none;
     outline: none;
     height: 100%;
+    flex-grow: 1;
     font-size: 24px;
     padding-left: 10px;
-    flex: 1;
+    box-sizing: border-box;
     color: black;
     width: 80%;
     
@@ -98,32 +89,29 @@ button{
     padding: 0;
     margin: 0 auto 10px auto;
     overflow: hidden;
-    margin-left: 1.66%;
     transition: height 0.5s ease-in-out;
 }
 
-.drop{
+.drop {
     font-family: "Roboto Slab", serif;
-    padding: 10px 0 10px 10px;
+    padding: 10px 10px;
     font-size: 20px;
     display: block;
     color: #232323;
     width: 100%;
 }
 
-.drop:hover{
+.drop:hover {
     color: 	white;
-    background: #232323;
-   
+    background: #232323;  
 }
 
-#menu{
-    float: left;
-    height: 60px;
-    display: none;
-    width: 60px;
-    margin-right: 1.66%;
-    cursor: pointer;
+#menu {
+  float: left;
+  height: 60px;
+  display: none;
+  width: 60px;
+  cursor: pointer;
 }
 
 .bar{
@@ -141,26 +129,23 @@ button{
     width: 40px;
 }
 
-.slide{
-    height: auto !important;
-    visibility: visible !important;
+.slide {
+  height: auto !important;
 }
 
-.alert{
-    height: 50px;
-    margin-left: 1.66%;
-    width: 100%;
+.alert {
+  height: 50px;
+  width: 100%;
 }
 
-.error{
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-   
+.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb; 
 }
 
-.success{
-    background-color: #d4edda;
-    border-color: #c3e6cb; 
+.success {
+  background-color: #d4edda;
+  border-color: #c3e6cb; 
 }
 
 .success p{
@@ -178,27 +163,20 @@ button{
 
 }
 
+
 @media(max-width:1000px){
-    .nav{
-        display: none;
-    }
-    #menu{
-        display: block;
-    }
-    .main{
-        grid-template-columns: 50% 45% !important;
-    }
+  .nav {
+    display: none;
+  }
+    
+  #menu {
+    display: block;
+  }
 }
 
-@media(min-width: 1002px){
-    #menu{
-        display: none;
-    }
+@media(min-width: 1002px) {
+  #menu {
+    display: none;
+  }
 }
 
-@media(max-width: 738px){
-    .main{
-        grid-template-columns: 95% !important;
-    }
-
-}

@@ -1,11 +1,11 @@
 <% include ./partials/header %>
 <h1 class="path"><%=res%></h1>
 <div class="grid">
-    <% for(let gif of result.data){ %>
-        <div class="img-container">
-            <img class="img" src="<%=gif.images.original.url%>">
-        </div>
-    <% } %>
+  <% for(let gif of result.data){ %>
+  <div class="img-container">
+    <img class="img" src="<%=gif.images.original.url%>">
+  </div>
+  <% } %>
 </div>
 
 

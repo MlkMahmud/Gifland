@@ -1,67 +1,55 @@
 'use strict'
 
-const express = require('express'),
-      router  = express.Router({mergeParams: true}),
-      User    = require('../models/user'),
-      request = require('request'),
-      Gif     = require('../models/gif'),
-      middlewareObj = require('../middleware/index'),
-      passport = require('passport');
+const express = require('express');
+const router = express.Router({ mergeParams: true });
+const Gif = require('../models/gif');
+const middlewareObj = require('../middleware/index');
+const fetch = require('node-fetch');
 
 //ROUTES
-router.get('/', function(req, res){
-    res.render('home')
+router.get('/', (req, res) => {
+  res.render('home')
 });
 
-router.get('/upload', middlewareObj.isAuthenticated, function(req, res){
-res.render('create')
+router.get('/upload', middlewareObj.isAuthenticated, (req, res) => {
+  res.render('create')
 });
 
-router.post('/upload', middlewareObj.isAuthenticated, function(req, res){
-let author = {id: req.user._id, username: req.user.username};
-let newGif = {name: req.body.name, image: req.body.image, author: author};
-Gif.create(newGif, function(err, gif){
-    if(err){
-        console.log(err)
+router.post('/upload', middlewareObj.isAuthenticated, (req, res) => {
+  const author = { id: req.user._id, username: req.user.username };
+  const newGif = { name: req.body.name, image: req.body.image, author };
+  Gif.create(newGif, (err, gif) => {
+    if (err) {
+      console.log(err);
     }
-    else{
-        res.redirect('/favorites')
+    else {
+      res.redirect('/favorites');
     }
-})
+  });
+});
 
-})
+router.get('/favorites', middlewareObj.isAuthenticated, (req, res) => {
+  Gif.find({}, (err, gifs) => {
+    res.render('favorites', { gifs, title: 'Favorites' });
+  });
+});
 
-router.get('/favorites', middlewareObj.isAuthenticated, function(req, res){
-Gif.find({}, function(err, gifs){
-    res.render('favorites', {gifs: gifs, res: 'Favorites'})
-})
-})
-
-router.delete('/favorites/:id', function(req, res){
-Gif.findByIdAndDelete(req.params.id, function(err, gif){
-    if(err){
-        console.log(err)
+router.delete('/favorites/:id', (req, res) => {
+  Gif.findByIdAndDelete(req.params.id, (err, gif) => {
+    if (err) {
+      console.log(err);
     }
-    else{
-        res.redirect('/favorites')
+    else {
+      res.redirect('/favorites');
     }
-})
-})
+  });
+});
 
+router.get('/search', (req, res) => {
+  fetch(`http://api.giphy.com/v1/gifs/search?q=${encodeURI(req.query.name)}&api_key=Uejb4jkKWw91TLRob4aVG5sFdL4WHzC5`)
+    .then(res => res.json()).then(result => res.render('search', { result }))
+    .catch(() => res.status(400).json("Error"));
+});
 
-router.get('/search', function(req, res){
-request(`http://api.giphy.com/v1/gifs/search?q=${encodeURI(req.query.name)}&api_key=Uejb4jkKWw91TLRob4aVG5sFdL4WHzC5`, function(err, response, body){
-    if(err){
-        console.log(err)
-    }
-    else{
-        let result = JSON.parse(body);
-        console.log(result);
-        res.render('search', {result: result});
-    }
-})
-
-
-})
 
 module.exports = router;
