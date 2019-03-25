@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 const Gif = require('../models/gif');
 const middlewareObj = require('../middleware/index');
+const apikey = process.env.APIKEY;
 const fetch = require('node-fetch');
 
 //ROUTES
@@ -46,7 +47,7 @@ router.delete('/favorites/:id', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-  fetch(`http://api.giphy.com/v1/gifs/search?q=${encodeURI(req.query.name)}&api_key=Uejb4jkKWw91TLRob4aVG5sFdL4WHzC5`)
+  fetch(`http://api.giphy.com/v1/gifs/search?q=${encodeURI(req.query.name)}&api_key=${apikey}`)
     .then(res => res.json()).then(result => res.render('search', { result }))
     .catch(() => res.status(400).json("Error"));
 });
