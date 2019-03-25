@@ -11,10 +11,11 @@ const apiRoutes = require('./routes/api');
 const gifRoutes = require('./routes/gif');
 const port = process.env.PORT || 4000;
 const indexRoutes = require('./routes/index');
+const database = process.env.DATABASE || 'mongodb://localhost/giphy';
 const app = express();
 
 //  Mongoose Setup
-mongoose.connect('mongodb://localhost/giphy', { useNewUrlParser: true });
+mongoose.connect(database, { useNewUrlParser: true });
 
 //  EXPRESS SETUP
 app.set('view engine', 'ejs');
