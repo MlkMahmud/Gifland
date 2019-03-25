@@ -1,118 +1,113 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Staatliches');
-*{
-    text-decoration: none;
-    color: white;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+* {
+  text-decoration: none;
+  color: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body{
+body {
   background: black;
   padding: 0 10px;
 }
 
-
-header{
-    width: 100%;
-    height: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-bottom: 10px;
-    
+header {
+  width: 100%;
+  height: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-#logo{
-    font-family: "Roboto Slab", serif;
-    font-weight: bolder;
-    font-size: 48px;
-    display: block;
-    margin-bottom: 10px;
-    color: #ff00ff;
-    text-align: center; 
-    text-shadow: 1px 1px #f4f4f4,
-    2px  2px  #f4f4f4;
-
+#logo {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bolder;
+  font-size: 48px;
+  display: block;
+  margin-bottom: 10px;
+  color: #ff00ff;
+  text-align: center;
+  text-shadow: 1px 1px #f4f4f4, 2px 2px #f4f4f4;
 }
 
-.nav{
-    margin: 0 0.3%;
-    font-family: "Roboto Slab", serif;
-    padding: 5px 10px;
-    font-size: 20px;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+.nav {
+  margin: 0 0.3%;
+  font-family: 'Roboto Slab', serif;
+  padding: 5px 10px;
+  font-size: 20px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-.nav:hover{
-    text-shadow: 3px 3px #4B0082;
+.nav:hover {
+  text-shadow: 3px 3px #4b0082;
 }
 
 nav {
   text-align: center;
 }
 
-
-#search{
-    width: 100%;
-    height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    overflow: hidden;
+#search {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 #searchBarButton {
-    background:#4B0082;
-    border: none;
-    height: 100%;
-    color: white;
-    width: 20%;
-    max-width: 100px;
-    cursor: pointer;
-    font-size: 24px;
+  background: #4b0082;
+  border: none;
+  height: 100%;
+  color: white;
+  width: 20%;
+  max-width: 100px;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 #searchBarInput {
-    border: none;
-    outline: none;
-    height: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    font-size: 24px;
-    padding-left: 10px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    color: black;
-    width: 80%;
-    
+  border: none;
+  border-radius: none;
+  outline: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 24px;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: black;
+  width: 80%;
 }
 
-#dropdown{
-    width: 100%;
-    height: 0;
-    background: #f1f1f1;
-    padding: 0;
-    margin: 0 auto 10px auto;
-    overflow: hidden;
-    -webkit-transition: height 0.5s ease-in-out;
-    transition: height 0.5s ease-in-out;
+#dropdown {
+  width: 100%;
+  height: 0;
+  background: #f1f1f1;
+  padding: 0;
+  margin: 0 auto 10px auto;
+  overflow: hidden;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 .drop {
-    font-family: "Roboto Slab", serif;
-    padding: 10px 10px;
-    font-size: 20px;
-    display: block;
-    color: #232323;
-    width: 100%;
+  font-family: 'Roboto Slab', serif;
+  padding: 10px 10px;
+  font-size: 20px;
+  display: block;
+  color: #232323;
+  width: 100%;
 }
 
 .drop:hover {
-    color: 	white;
-    background: #232323;  
+  color: white;
+  background: #232323;
 }
 
 #menu {
@@ -123,19 +118,19 @@ nav {
   cursor: pointer;
 }
 
-.bar{
-    width: 60px;
-    margin: 5px;
-    background: white;
-    height: 5px;
+.bar {
+  width: 60px;
+  margin: 5px;
+  background: white;
+  height: 5px;
 }
 
-.bar2{
-    width: 50px;
+.bar2 {
+  width: 50px;
 }
 
-.bar3{
-    width: 40px;
+.bar3 {
+  width: 40px;
 }
 
 .slide {
@@ -149,43 +144,40 @@ nav {
 
 .error {
   background-color: #f8d7da;
-  border-color: #f5c6cb; 
+  border-color: #f5c6cb;
 }
 
 .success {
   background-color: #d4edda;
-  border-color: #c3e6cb; 
+  border-color: #c3e6cb;
 }
 
-.success p{
-    color: #155724;
-    padding-left: 10px;
+.success p {
+  color: #155724;
+  padding-left: 10px;
 }
 
-.error p{
-    color: #721c24;
-    padding-left: 10px;
+.error p {
+  color: #721c24;
+  padding-left: 10px;
 }
 
-.alert p{
-   line-height: 50px;
-
+.alert p {
+  line-height: 50px;
 }
 
-
-@media(max-width:1000px){
+@media (max-width: 1000px) {
   .nav {
     display: none;
   }
-    
+
   #menu {
     display: block;
   }
 }
 
-@media(min-width: 1002px) {
+@media (min-width: 1002px) {
   #menu {
     display: none;
   }
 }
-
