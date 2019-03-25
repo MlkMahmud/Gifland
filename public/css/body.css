@@ -143,6 +143,7 @@
     display: block;
     width: 100%;
     height: 100%;
+    -webkit-transition: all linear 0.5s;
     transition: all linear 0.5s;
 }
 .del form input{
