@@ -25,7 +25,7 @@
 }
 
 .one {
-  background: url(/images/images.jpg) no-repeat center;
+  background: url(/images/image2.jpg) no-repeat center;
   background-size: cover;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .two {
-  background: url(/images/images2.jpg) no-repeat center;
+  background: url(/images/image.jpg) no-repeat center;
   background-size: cover;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .three {
-  background: url(/images/images3.jpg) no-repeat center;
+  background: url(/images/image3.jpg) no-repeat center;
   background-size: cover;
 }
 
