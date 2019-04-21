@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node -r dotenv/config app.js"
   },
   "author": "Malik Mahmud",
   "license": "ISC",
@@ -21,5 +21,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "dotenv": "^7.0.0"
+  }
 }
